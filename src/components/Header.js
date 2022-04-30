@@ -1,8 +1,10 @@
+import { signOut } from "firebase/auth";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import logo from "../assets/logo/company-logo.png";
+import auth from "../firebase";
 
 const Header = () => {
   return (
@@ -19,7 +21,7 @@ const Header = () => {
           <NavLink className="mr-5 uppercase" to="/blogs">Blogs</NavLink>
           <NavLink className="mr-5 uppercase" to="/regester">Regester</NavLink>
           <NavLink className="mr-5 uppercase" to="/signin">Sign In</NavLink>
-          <NavLink className="mr-5 uppercase" to="/signout">sign out</NavLink>
+          <button onClick={() => signOut(auth)} className="mr-5 uppercase rounded-lg bg-blue-600 py-2 px-8 text-white" >sign out</button>
         </div>
       </nav>
   );
