@@ -1,11 +1,14 @@
 import React from 'react';
 import 'react-toastify/dist/ReactToastify.css';
+import Banner from '../components/Banner';
+import Inventories from '../components/Inventories';
 
 
 const Home = () => {
     return (
         <div>
-            <h1>this is home page</h1>
+            <Banner/>
+            <Inventories/>
         </div>
     );
 };

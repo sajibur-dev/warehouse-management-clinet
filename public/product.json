@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Dell 30 inspiron",
+    "image": "https://i.ibb.co/6mS5BkV/laptop1.png",
+    "description": "This is best for stident.",
+    "price": "20000",
+    "quantity": 1,
+    "supplier": "bongo store",
+
+    "sold": false,
+    "category": "laptop"
+  },
+  {
+    "name": "Hp 15 ",
+    "image": "https://i.ibb.co/6mS5BkV/laptop1.png",
+    "description": "For professional developer.",
+    "price": "30000",
+    "quantity": 1,
+    "supplier": "boshundhara shop",
+
+    "sold": false,
+    "category": "laptop"
+  },
+  {
+    "name": "Asus 50",
+    "image": "https://i.ibb.co/6mS5BkV/laptop1.png",
+    "description": "This product best professional programmer",
+    "price": "40000",
+    "quantity": 1,
+    "supplier": "bongo store",
+
+    "sold": false,
+    "category": "laptop"
+  },
+  {
+    "name": "Lenovo 32",
+    "image": "https://i.ibb.co/6mS5BkV/laptop1.png",
+    "description": "In budget this product is resanable for everyone",
+    "price": "30000",
+    "quantity": 1,
+    "supplier": "ali express",
+
+    "sold": false,
+    "category": "laptop"
+  },
+  {
+    "name": "Apple 13",
+    "image": "https://i.ibb.co/6mS5BkV/laptop1.png",
+    "description": "This is for tech enthusias user",
+    "price": "100000",
+    "quantity": 1,
+    "supplier": "amazon chain",
+
+    "sold": false,
+    "category": "smart phone"
+  },
+  {
+    "name": "Samsan start TV",
+    "image": "https://i.ibb.co/qks1jNC/smart-tv.png",
+    "description": "For family use",
+    "price": "45000",
+    "quantity": 1,
+    "supplier": "Amar shop",
+
+    "sold": false,
+    "category": "smart TV"
+  }
+]
