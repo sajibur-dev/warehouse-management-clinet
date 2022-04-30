@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import {
-    useCreateUserWithEmailAndPassword,
-    useSendEmailVerification,
-    useUpdateProfile
+  useCreateUserWithEmailAndPassword,
+  useSendEmailVerification,
+  useUpdateProfile
 } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";

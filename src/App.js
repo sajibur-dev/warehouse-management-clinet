@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Blog from "./pages/Blog";
 import Home from "./pages/Home";
 import Regester from "./pages/Regester";
+import SignIn from "./pages/SignIn";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           </Route>
           <Route path="/blog" element={<Blog />} />
           <Route path="/regester" element={<Regester/>}/>
+          <Route path="/signin" element={<SignIn/>}/>
         </Routes>
       </main>
       <footer>

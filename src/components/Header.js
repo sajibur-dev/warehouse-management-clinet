@@ -20,10 +20,10 @@ const Header = () => {
         <div>
         <ToastContainer/>
           <NavLink className="mr-5 uppercase" to="/">Home</NavLink>
-          <NavLink className="mr-5 uppercase" to="/manageinventory">Manage Inventory</NavLink>
-          <NavLink className="mr-5 uppercase" to="/myitems">My Items</NavLink>
+          { user && <> <NavLink className="mr-5 uppercase" to="/manageinventory">Manage Inventory</NavLink>
+          <NavLink className="mr-5 uppercase" to="/myitems">My Items</NavLink></>}
           <NavLink className="mr-5 uppercase" to="/blogs">Blogs</NavLink>
-          <NavLink className="mr-5 uppercase" to="/regester">Regester</NavLink>
+          <NavLink className="mr-5 uppercase rounded-lg bg-slate-600 py-3 px-8 text-white" to="/regester">Regester</NavLink>
 
           {!user ? <NavLink className="mr-5 uppercase rounded-lg bg-blue-600 py-3 px-8 text-white" to="/signin">Sign In</NavLink> : 
 
