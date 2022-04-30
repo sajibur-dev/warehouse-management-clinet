@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import PrivateRoute from "./components/auth/PrivateRoute";
 import Header from "./components/Header";
-import UpdateInventory from "./components/UpdateInventory";
 import AddItem from "./pages/AddItem";
 import Blog from "./pages/Blog";
 import Home from "./pages/Home";
@@ -10,6 +9,7 @@ import ManageInventory from "./pages/ManageInventory";
 import MyItems from "./pages/MyItems";
 import Regester from "./pages/Regester";
 import SignIn from "./pages/SignIn";
+import UpdateInventory from "./pages/UpdateInventory";
 
 function App() {
   return (

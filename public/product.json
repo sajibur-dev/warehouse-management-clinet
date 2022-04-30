@@ -6,7 +6,7 @@
     "price": "20000",
     "quantity": 1,
     "supplier": "bongo store",
-
+    "email": "",
     "sold": false,
     "category": "laptop"
   },
@@ -17,7 +17,7 @@
     "price": "30000",
     "quantity": 1,
     "supplier": "boshundhara shop",
-
+    "email": "",
     "sold": false,
     "category": "laptop"
   },
@@ -28,7 +28,7 @@
     "price": "40000",
     "quantity": 1,
     "supplier": "bongo store",
-
+    "email": "",
     "sold": false,
     "category": "laptop"
   },
@@ -39,7 +39,7 @@
     "price": "30000",
     "quantity": 1,
     "supplier": "ali express",
-
+    "email": "",
     "sold": false,
     "category": "laptop"
   },
@@ -50,7 +50,7 @@
     "price": "100000",
     "quantity": 1,
     "supplier": "amazon chain",
-
+    "email": "",
     "sold": false,
     "category": "smart phone"
   },
@@ -61,7 +61,7 @@
     "price": "45000",
     "quantity": 1,
     "supplier": "Amar shop",
-
+    "email": "",
     "sold": false,
     "category": "smart TV"
   }

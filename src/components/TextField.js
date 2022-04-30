@@ -1,8 +1,8 @@
 import React from 'react';
 
-const TextField = ({...rest}) => {
+const TextField = ({display,...rest}) => {
     return (
-        <input className='block p-2 border-2 border-gray-400 rounded-lg mb-6 outline-none' {...rest}  required/>
+        <input className={`block p-2 border-2 border-gray-400 rounded-lg mb-6 outline-none`} {...rest}  required/>
     );
 };
 
