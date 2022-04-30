@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import {
-    useSendPasswordResetEmail,
-    useSignInWithEmailAndPassword
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword
 } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import FormButton from "../components/FormButton";
 import SocialLogin from "../components/SocialLogin";
@@ -16,10 +16,12 @@ const SignIn = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+  const location = useLocation()
+  const from = location.state.from.pathname || '/';
 
   const navigate = useNavigate();
   if (user) {
-    navigate("/");
+    navigate(from,{replace:true});
   }
   const handleSignInForm = (e) => {
     e.preventDefault();
