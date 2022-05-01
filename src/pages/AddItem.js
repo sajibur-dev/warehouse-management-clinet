@@ -27,7 +27,7 @@ const AddItem = () => {
         email:user.email,
         category
     };
-    fetch('http://localhost:5000/products',{
+    fetch('https://dry-mountain-82571.herokuapp.com/products',{
         method:'POST',
         headers:{
             'content-type':'application/json'

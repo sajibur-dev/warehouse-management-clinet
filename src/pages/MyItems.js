@@ -11,7 +11,7 @@ const MyItems = () => {
   const [user] = useAuthState(auth);
   const navigate =  useNavigate()
   useEffect(() => {
-      axiosPrivate.get(`http://localhost:5000/myitems?email=${user?.email}`)
+      axiosPrivate.get(`https://dry-mountain-82571.herokuapp.com/myitems?email=${user?.email}`)
       .then((res) => setMyItems(res.data))
       .then((err) => {
           if(err.response.status === 401 || err.response.status === 403){

@@ -3,7 +3,7 @@ import useGetData from '../hooks/useGetData';
 import Inventory from './Inventory';
 
 const Inventories = () => {
-    const url = 'http://localhost:5000/products';
+    const url = 'https://dry-mountain-82571.herokuapp.com/products';
     const [products] = useGetData(url);
 
     const showingProducts= products.slice(0,6)

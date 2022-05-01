@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 
 const UpdateInventory = () => {
   const { id } = useParams();
-  const url = `http://localhost:5000/products/${id}`;
+  const url = `https://dry-mountain-82571.herokuapp.com/products/${id}`;
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");

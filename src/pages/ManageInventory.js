@@ -7,7 +7,7 @@ const ManageInventory = () => {
   const [pageCount,setPageCount] = useState(0);
   const [currentPage,setCurrentPage] = useState(0);
   const [size,setSize] = useState(10);
-  const url = `http://localhost:5000/products?page=${currentPage}&&size=${size}`;
+  const url = `https://dry-mountain-82571.herokuapp.com/products?page=${currentPage}&&size=${size}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -15,7 +15,7 @@ const ManageInventory = () => {
   }, [url]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/productCount')
+    fetch('https://dry-mountain-82571.herokuapp.com/productCount')
     .then((res) => res.json())
     .then((data) =>{
       const count = data.count;
@@ -27,7 +27,7 @@ const ManageInventory = () => {
   const deleteProduct = (id) => {
     const proccesed = window.confirm("Are you sure you want to delete?");
     if (proccesed) {
-      fetch(`http://localhost:5000/products/${id}`, {
+      fetch(`https://dry-mountain-82571.herokuapp.com/products/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
