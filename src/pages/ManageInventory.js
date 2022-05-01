@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
+
 
 const ManageInventory = () => {
   const url = "http://localhost:5000/products";
@@ -8,6 +10,7 @@ const ManageInventory = () => {
       .then((res) => res.json())
       .then((products) => setProducts(products));
   }, []);
+
   const deleteProduct = (id) => {
     const proccesed = window.confirm("Are you sure you want to delete?");
     if (proccesed) {
@@ -31,12 +34,16 @@ const ManageInventory = () => {
 
       <table className="border-2 border-slate-500 p-5 w-1/2 m-auto">
         <thead>
+          <th>Image</th>
           <th>Name</th>
           <th>Category</th>
         </thead>
         <tbody>
           {products.map((product) => (
             <tr key={product._id}>
+              <td className="border-2 border-slate-700 py-2 px-5">
+                <img src={product.image} className="w-10" alt="" />
+              </td>
               <td className="border-2 border-slate-700 py-2 px-5">{product.name}</td>
               <td className="border-2 border-slate-700 py-2 px-5">{product.category}</td>
               <td className="border-2 border-slate-700 py-2 px-5">
@@ -48,6 +55,10 @@ const ManageInventory = () => {
           ))}
         </tbody>
       </table>
+      <div className="flex justify-end items-center mt-3">
+        <Link to="/additem"
+         className="py-2 px-5 bg-slate-800 rounded-lg text-white" >add items ++</Link>
+      </div>
     </div>
   );
 };

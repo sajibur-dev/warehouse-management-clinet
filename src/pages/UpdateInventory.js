@@ -70,18 +70,21 @@ const updateQuantity = () => {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            required
           />
           <input
             className="border-2 border-slate-800 p-2 rounded-lg mr-3 mt-3"
             type="text"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
+            required
           />
           <input
             className="border-2 border-slate-800 p-2 rounded-lg mr-3 mt-3"
             type="number"
             value={quantity}
             onChange={(e) => setQuantity(e.target.value)}
+            required
           />
 
           <br />
@@ -91,18 +94,21 @@ const updateQuantity = () => {
             type="text"
             value={supplier}
             onChange={(e) => setSupplier(e.target.value)}
+            required
           />
           <input
             className="border-2 border-slate-800 p-2 rounded-lg mr-3 mt-3"
             type="text"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
+            required
           />
           <input
             className="border-2 border-slate-800 p-2 rounded-lg mr-3 mt-3"
             type="text"
             value={image}
             onChange={(e) => setImage(e.target.value)}
+            required
           />
           <br />
           <textarea
@@ -111,6 +117,7 @@ const updateQuantity = () => {
             value={description}
             cols="30"
             rows="5"
+            required
           ></textarea>
           <br />
           <input
