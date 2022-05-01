@@ -51,7 +51,7 @@ const ManageInventory = () => {
           <th>Name</th>
           <th>Category</th>
         </thead>
-        <tbody>
+        <tbody className= "h-screen">
           {products.map((product) => (
             <tr key={product._id}>
               <td className="border-2 border-slate-700 py-2 px-5">

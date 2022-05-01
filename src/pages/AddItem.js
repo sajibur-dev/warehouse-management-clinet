@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 import auth from '../firebase';
 
 const AddItem = () => {
@@ -33,7 +34,11 @@ const AddItem = () => {
         },
         body:JSON.stringify(product)
     }).then((res) => res.json())
-    .then((data) => console.log(data))
+    .then((data) => {
+      if(data.acknowledged){
+        toast('product added succesfully')
+      }
+    })
     
 }
   return (
