@@ -10,6 +10,7 @@ import FormButton from "../components/FormButton";
 import SocialLogin from "../components/SocialLogin";
 import TextField from "../components/TextField";
 import auth from "../firebase";
+import useToken from "../hooks/useToken";
 
 const Regester = () => {
   const [displayName, setDisplayName] = useState("");
@@ -20,8 +21,10 @@ const Regester = () => {
   const [updateProfile] = useUpdateProfile(auth);
   const [sendEmailVerification] = useSendEmailVerification(auth);
 
+  const [token] = useToken(user)
+
   const navigate = useNavigate();
-  if (user) {
+  if (token) {
     navigate("/");
   }
   const handleRegesterForm = async (e) => {

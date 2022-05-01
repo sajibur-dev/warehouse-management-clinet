@@ -9,6 +9,7 @@ import FormButton from "../components/FormButton";
 import SocialLogin from "../components/SocialLogin";
 import TextField from "../components/TextField";
 import auth from "../firebase";
+import useToken from "../hooks/useToken";
 
 const SignIn = () => {
   const [eamil, setEmail] = useState("");
@@ -16,11 +17,12 @@ const SignIn = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+  const [token] =  useToken(user);
   const location = useLocation()
   const from = location?.state?.from?.pathname || '/';
 
   const navigate = useNavigate();
-  if (user) {
+  if (token) {
     navigate(from,{replace:true});
   }
   const handleSignInForm = (e) => {

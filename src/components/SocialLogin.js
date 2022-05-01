@@ -4,17 +4,20 @@ import { useNavigate } from 'react-router-dom';
 import githubLogin from '../assets/logo/github.png';
 import googleLogo from "../assets/logo/google.png";
 import auth from '../firebase';
+import useToken from "../hooks/useToken";
 
 
 const SocialLogin = ({ type, provider, ...rest }) => {
 
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const [signInWithGithub, githubUser] = useSignInWithGithub(auth);
+  const [token] = useToken(user || githubUser);
 
   
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  console.log(user);
 
-  if(user || githubUser){
+  if(token){
     navigate('/')
   }
 
