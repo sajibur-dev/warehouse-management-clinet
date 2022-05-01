@@ -31,9 +31,9 @@ function App() {
           <Route path="/signin" element={<SignIn />} />
         </Routes>
       </main>
-      <footer>
+      {/* <footer>
         <p>this is footer</p>
-      </footer>
+      </footer> */}
     </div>
   );
 }
