@@ -59,15 +59,7 @@ const SignIn = () => {
             await sendPasswordResetEmail(eamil);
             toast("send email for password reset! check your email");
           }}>forgotten password</Button>
-        {/* <button
-          onClick={async () => {
-            await sendPasswordResetEmail(eamil);
-            toast("send email for password reset! check your email");
-          }}
-          className="bg-blue-800 py-2 px-8 my-3 rounded-lg text-white"
-        >
-          forgotten password
-        </button> */}
+        
         <SocialLogin type="sign up" />
       </div>
     </div>

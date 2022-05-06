@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Button from "./Button";
 
 const Inventory = ({ product }) => {
   const { _id, name, image, description, price, quantity, supplier } = product;
@@ -20,12 +21,11 @@ const Inventory = ({ product }) => {
           <p className="text-blue-500">{supplier}</p>
         </div>
         
-        <button
+        <Button
           onClick={() => navigate(`inventory/${_id}`)}
-          className="py-2 px-9 bg-blue-700 rounded-lg text-white relative bottom-1 uppercase"
         >
           update
-        </button>
+        </Button>
       </div>
     </div>
   );

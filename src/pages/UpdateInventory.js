@@ -56,7 +56,7 @@ const UpdateInventory = () => {
       });
   };
 const updateQuantity = () => {
-  if(quantity > 0){
+  if(quantity > 1){
     setQuantity((prevState) => prevState - 1)
   }
 }

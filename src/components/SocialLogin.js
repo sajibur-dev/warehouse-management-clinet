@@ -25,12 +25,13 @@ const SocialLogin = ({ type, provider, ...rest }) => {
     <>
       {" "}
       <div
-        className="flex justify-center items-center border-2 border-green-800 rounded-lg mt-5 cursor-pointer hover:rounded-full"
+        className="flex justify-center items-center border-2 border-green-800 rounded-lg mt-5 cursor-pointer hover:rounded-full duration-200"
         {...rest}
       >
         <img className="w-10 mr-3" src={googleLogo} alt="" />
         <button onClick={() => signInWithGoogle()}> {type} with Google</button>
       </div>
+
       <div
         className="flex justify-center items-center border-2 border-green-800 rounded-lg mt-5 py-2 cursor-pointer hover:rounded-full"
         {...rest}

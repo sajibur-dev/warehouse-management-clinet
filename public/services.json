@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Large space",
+    "feature": [
+      "5 squre feet space",
+      "security provide for warehouse",
+      "auto updated message provide",
+      "auto warehouse managtement"
+    ],
+    "price": "5000"
+  },
+  {
+    "name": "Medium space",
+    "feature": [
+      "3 squre feet space",
+      "auto updated message provide",
+      "auto warehouse managtement"
+    ],
+    "price": "3000"
+  },
+  {
+    "name": "Small space",
+    "feature": ["1 squre feet space", "auto warehouse managtement"],
+    "price": "2000"
+  }
+]

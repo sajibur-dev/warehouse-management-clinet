@@ -1,22 +1,25 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import 'react-toastify/dist/ReactToastify.css';
-import Banner from '../components/Banner';
-import Button from '../components/Button';
-import Inventories from '../components/Inventories';
-
+import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
+import Banner from "../components/Banner";
+import Inventories from "../components/Inventories";
+import Services from "../components/Services";
+import auth from "../firebase";
+import SignIn from "./SignIn";
 
 const Home = () => {
-    const navigate = useNavigate();
-    return (
-        <div>
-            <Banner/>
-            <Inventories/>
-            <div className='flex justify-end items-center my-4'>
-                <Button onClick={() => navigate("/manageinventory")}>Manage inventories</Button>
-            </div>
-        </div>
-    );
+  const navigate = useNavigate();
+const [user] = useAuthState(auth)
+  return (
+    <div>
+      { user ? <> <Banner />
+      <Inventories />
+      <Services />
+      </> : <SignIn/>
+      }
+    </div>
+  );
 };
 
 export default Home;
