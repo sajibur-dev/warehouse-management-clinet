@@ -22,7 +22,7 @@ const MyItems = () => {
   }, [navigate,user?.email]);
   return (
     <div>
-      <h3>this is my Items page </h3>
+      <h3> My Items  </h3>
       <div className="grid grid-cols-2 gap-5">
         {myItems.map((product) => (
           <Items product={product} />

@@ -5,6 +5,7 @@ import {
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import Button from "../components/Button";
 import FormButton from "../components/FormButton";
 import SocialLogin from "../components/SocialLogin";
 import TextField from "../components/TextField";
@@ -53,7 +54,12 @@ const SignIn = () => {
             Regester
           </Link>
         </p>
-        <button
+
+        <Button onClick={async () => {
+            await sendPasswordResetEmail(eamil);
+            toast("send email for password reset! check your email");
+          }}>forgotten password</Button>
+        {/* <button
           onClick={async () => {
             await sendPasswordResetEmail(eamil);
             toast("send email for password reset! check your email");
@@ -61,7 +67,7 @@ const SignIn = () => {
           className="bg-blue-800 py-2 px-8 my-3 rounded-lg text-white"
         >
           forgotten password
-        </button>
+        </button> */}
         <SocialLogin type="sign up" />
       </div>
     </div>

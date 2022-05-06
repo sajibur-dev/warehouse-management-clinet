@@ -1,6 +1,7 @@
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
-
 
 const ManageInventory = () => {
   const [products, setProducts] = useState([]);
@@ -60,8 +61,8 @@ const ManageInventory = () => {
               <td className="border-2 border-slate-700 py-2 px-5">{product.name}</td>
               <td className="border-2 border-slate-700 py-2 px-5">{product.category}</td>
               <td className="border-2 border-slate-700 py-2 px-5">
-                <button onClick={() => deleteProduct(product._id)}>
-                  delete
+                <button className="py-2 px-3 rounded-lg hover:bg-gray-200 hover:text-white duration-300 " onClick={() => deleteProduct(product._id)}>
+                  <FontAwesomeIcon icon={faTrashCan}/>
                 </button>
               </td>
             </tr>
