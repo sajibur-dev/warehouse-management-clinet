@@ -49,7 +49,7 @@ const Header = () => {
             </NavLink>
             <NavLink style={({ isActive }) =>
               isActive ? {color:"goldenrod"} : undefined
-            } className="mr-5 uppercase" to="/blogs">
+            } className="mr-5 uppercase" to="/blog">
               Blogs
             </NavLink>
 

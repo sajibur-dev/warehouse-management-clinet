@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import Button from "../components/Button";
 
 const UpdateInventory = () => {
   const { id } = useParams();
@@ -14,17 +15,19 @@ const UpdateInventory = () => {
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
 
+  // const [product,setProduct] = useState({});
+
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
-      .then((product) => {
-        setName(product?.name);
-        setPrice(product?.price);
-        setDescription(product?.description);
-        setQuantity(product?.quantity);
-        setSupplier(product?.supplier);
-        setCategory(product?.category);
-        setImage(product?.image);
+      .then((productData) => {
+        setName(productData?.name);
+        setPrice(productData?.price);
+        setDescription(productData?.description);
+        setQuantity(productData?.quantity);
+        setSupplier(productData?.supplier);
+        setCategory(productData?.category);
+        setImage(productData?.image);
       });
   }, [url]);
 
@@ -39,7 +42,6 @@ const UpdateInventory = () => {
       supplier,
       category,
     };
-    console.log(product);
 
     fetch(url, {
       method: "PUT",
@@ -55,16 +57,19 @@ const UpdateInventory = () => {
         }
       });
   };
-const updateQuantity = () => {
-  if(quantity > 1){
-    setQuantity((prevState) => prevState - 1)
-  }
-}
+
+  const updateQuantity = () => {
+    if (quantity > 1) {
+      setQuantity((prevState) => prevState - 1);
+    }
+  };
   return (
     <div className="flex justify-center items-center p-5 mt-6">
       <div>
-        <h3 className="text-slate-700 text-2xl text-center my-5">Update Your Entry ... </h3>
-        <form onSubmit={handleUpdateProduct}>
+        <h3 className="text-slate-700 text-2xl text-center my-5">
+          Update Your Entry ...{" "}
+        </h3>
+        <form onSubmit={handleUpdateProduct} className="mb-5">
           <input
             className="border-2 border-slate-800 p-2 rounded-lg mr-3 mt-3"
             type="text"
@@ -122,11 +127,11 @@ const updateQuantity = () => {
           <br />
           <input
             type="submit"
-            value="submit"
+            value="update"
             className="py-2 px-5 text-white uppercase rounded-lg bg-blue-700 cursor-pointer"
           />
-          <button onClick={updateQuantity} className="py-2 px-3 rounded-lg bg-slate-700 text-white ml-3">delivered</button>
         </form>
+        <Button onClick={updateQuantity}>delivered</Button>
       </div>
     </div>
   );

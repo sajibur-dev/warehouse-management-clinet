@@ -22,7 +22,7 @@ const Inventory = ({ product }) => {
         </div>
         
         <Button
-          onClick={() => navigate(`inventory/${_id}`)}
+          onClick={() => navigate(`/inventory/${_id}`)}
         >
           update
         </Button>

@@ -10,14 +10,19 @@ import SignIn from "./SignIn";
 
 const Home = () => {
   const navigate = useNavigate();
-const [user] = useAuthState(auth)
+  const [user] = useAuthState(auth);
   return (
     <div>
-      { user ? <> <Banner />
-      <Inventories />
-      <Services />
-      </> : <SignIn/>
-      }
+      {user ? (
+        <>
+          {" "}
+          <Banner />
+          <Inventories />
+          <Services />
+        </>
+      ) : (
+        <SignIn />
+      )}
     </div>
   );
 };
