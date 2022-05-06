@@ -1,10 +1,12 @@
-import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import axiosPrivate from "../api/axiosPrivate";
+import LinkButton from "../components/LinkButton";
+import Loading from "../components/Loading";
 import auth from "../firebase";
 
 const ManageInventory = () => {
@@ -65,7 +67,10 @@ const ManageInventory = () => {
       <h1 className="text-4xl text-center my-10">Manage Your Inventories : </h1>
 
      {
-       products.length === 0 ? <p className="text-center text-5xl text-red-500">loading...</p> :  <table className="border-2 border-slate-500 p-5 h-96 w-1/2 m-auto">
+       products.length === 0 ? 
+      //  <p className="text-center text-5xl text-red-500">loading...</p>
+      <Loading/>
+        :  <table className="border-2 border-slate-500 p-5 h-96 md:w-1/2 w-full m-auto">
        <thead className="text-center">
          <th>Image</th>
          <th>Name</th>
@@ -75,8 +80,8 @@ const ManageInventory = () => {
        <tbody>
          {products.map((product) => (
            <tr key={product._id}>
-             <td className="border-2 border-slate-700 py-2 px-5">
-               <img src={product.image} className="w-10" alt="" />
+             <td className="border-2 border-slate-700 md:py-2 md:px-5">
+               <img src={product.image} className="md:w-10 w-full" alt="" />
              </td>
              <td className="border-2 border-slate-700 py-2 px-5">
                {product.name}
@@ -111,12 +116,12 @@ const ManageInventory = () => {
         ))}
       </div>
       <div className="flex justify-end items-center mt-3">
-        <Link
+        <LinkButton
           to="/additem"
           className="py-2 px-5 bg-slate-800 rounded-lg text-white"
         >
-          add items ++
-        </Link>
+          <FontAwesomeIcon icon={faPlus}/>
+        </LinkButton>
       </div>
     </div>
   );

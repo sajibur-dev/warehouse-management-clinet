@@ -7,6 +7,7 @@ import Blog from "./pages/Blog";
 import Home from "./pages/Home";
 import ManageInventory from "./pages/ManageInventory";
 import MyItems from "./pages/MyItems";
+import NotFound from "./pages/NotFound";
 import Regester from "./pages/Regester";
 import SignIn from "./pages/SignIn";
 import UpdateInventory from "./pages/UpdateInventory";
@@ -27,7 +28,7 @@ function App() {
             <Route path="myitems" element={<MyItems/>}/>
             <Route path="blog" element={<Blog />} />
           </Route>
-          
+          <Route path="/*" element={<NotFound/>}/>
           <Route path="/regester" element={<Regester />} />
           <Route path="/signin" element={<SignIn />} />
         </Routes>

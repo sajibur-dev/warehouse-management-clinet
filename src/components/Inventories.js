@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import axiosPrivate from "../api/axiosPrivate";
 import auth from "../firebase";
 import Inventory from "./Inventory";
+import Loading from "./Loading";
 
 const Inventories = () => {
   const [user] = useAuthState(auth);
@@ -30,9 +31,13 @@ const Inventories = () => {
     <div className="mt-5 space-y-3">
       <h1 className="text-3xl text-center">Inventories</h1>
       {showingProducts.length === 0 ? (
-        <p className="text-5xl text-center text-red-600">loading.....</p>
+        // <p className="text-5xl text-center text-red-600">loading.....</p>
+        <div className="absolute">
+
+          <Loading />
+        </div>
       ) : (
-        <div className="p-3 grid lg:grid-cols-4 grid-cols-1 md:grid-cols-3 gap-3">
+        <div className="p-3 grid lg:grid-cols-3 grid-cols-1 md:grid-cols-3 gap-3">
           {showingProducts.map((product) => (
             <Inventory key={product._id} product={product} />
           ))}

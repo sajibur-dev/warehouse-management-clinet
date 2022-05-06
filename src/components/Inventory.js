@@ -6,7 +6,7 @@ const Inventory = ({ product }) => {
   const { _id, name, image, description, price, quantity, supplier } = product;
   const navigate = useNavigate();
   return (
-    <div className="md:w-full rounded-lg shadow-lg text-slate-800">
+    <div className="w-72 rounded-lg shadow-lg text-slate-800">
       <img className="w-full h-60" src={image} alt="product" />
       <div className="p-3 space-y-5 mt-5">
         <div className="flex justify-between items-center">
