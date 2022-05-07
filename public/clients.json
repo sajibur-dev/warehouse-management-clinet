@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Jhon Doe",
+    "desgnation": "Businessman",
+    "review": 5,
+    "comments": "For small business there services is one of the best services",
+    "img": "https://i.ibb.co/2vwvQf6/user3.png"
+  },
+  {
+    "name": "Ariana roy",
+    "desgnation": "Entrapraner",
+    "review": 5,
+    "comments": "I ma very happy for there services.because they care there client's",
+    "img": "https://i.ibb.co/nPxGm2t/user2.png"
+  },
+  {
+    "name": "Abdus Salam",
+    "desgnation": "star-up founder",
+    "review": 5,
+    "comments": "For star-up there services is amazing",
+    "img": "https://i.ibb.co/3y41gwX/user1.png"
+  }
+]

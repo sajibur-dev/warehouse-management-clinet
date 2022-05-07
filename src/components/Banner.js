@@ -13,7 +13,7 @@ const Banner = () => {
 
   return (
     <Carousel activeIndex={index} onSelect={handleSelect}>
-      <Carousel.Item className="h-1/6">
+      <Carousel.Item className="h-2/3">
         <img
           className="d-block w-full"
           src={image1}

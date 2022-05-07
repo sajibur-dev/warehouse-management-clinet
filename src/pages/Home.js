@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Banner from "../components/Banner";
 import Inventories from "../components/Inventories";
 import Services from "../components/Services";
+import Success from "../components/Success";
 import auth from "../firebase";
 import SignIn from "./SignIn";
 
@@ -27,6 +28,7 @@ const Home = () => {
         <Banner />
         <Inventories />
         <Services />
+        <Success/>
       </div>
     );
   } else {

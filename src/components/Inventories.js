@@ -28,12 +28,10 @@ const Inventories = () => {
   const showingProducts = products.slice(0, 6);
 
   return (
-    <div className="mt-5 space-y-3">
+    <div className=" mt-5 space-y-3">
       <h1 className="text-3xl text-center">Inventories</h1>
       {showingProducts.length === 0 ? (
-        // <p className="text-5xl text-center text-red-600">loading.....</p>
         <div className="absolute">
-
           <Loading />
         </div>
       ) : (
