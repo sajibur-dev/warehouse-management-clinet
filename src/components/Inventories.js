@@ -35,7 +35,7 @@ const Inventories = () => {
           <Loading />
         </div>
       ) : (
-        <div className="p-3 grid lg:grid-cols-3 grid-cols-1 md:grid-cols-3 gap-3">
+        <div className="p-3 grid lg:grid-cols-3 grid-cols-1 md:grid-cols-3 gap-y-20">
           {showingProducts.map((product) => (
             <Inventory key={product._id} product={product} />
           ))}

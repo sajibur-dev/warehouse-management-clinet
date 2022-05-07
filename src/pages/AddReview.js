@@ -50,7 +50,6 @@ console.log(existingReview);
             .then((res)=> res.json())
             .then((data) => {
                 toast('data is saved');
-                
             })
         } else {
             toast('review allready exist');

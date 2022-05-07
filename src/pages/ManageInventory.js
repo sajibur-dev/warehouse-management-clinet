@@ -79,16 +79,16 @@ const ManageInventory = () => {
        <tbody>
          {products.map((product) => (
            <tr key={product._id}>
-             <td className="border-2 border-slate-700 md:py-2 md:px-5">
-               <img src={product.image} className="md:w-10 w-full" alt="" />
+             <td className="border-2 border-slate-700 md:py-2  md:px-5 py-1 px-1  w-1/4">
+               <img src={product.image} className="md:w-10 w-2/3" alt="" />
              </td>
-             <td className="border-2 border-slate-700 py-2 px-5">
+             <td className="border-2 border-slate-700 md:py-2 md:px-5 py-1 px-1 md:text-base text-sm">
                {product.name}
              </td>
-             <td className="border-2 border-slate-700 py-2 px-5">
+             <td className="border-2 border-slate-700 md:py-2 md:px-5 py-1 px-1 md:base text-sm">
                {product.category}
              </td>
-             <td className="border-2 border-slate-700 py-2 px-5">
+             <td className="border-2 border-slate-700 md:py-2 md:px-5 py-1 px-1">
                <button
                  className="py-2 px-3 rounded-lg hover:bg-gray-200 hover:text-red-700 duration-300 "
                  onClick={() => deleteProduct(product._id)}

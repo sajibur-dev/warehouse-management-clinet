@@ -45,7 +45,7 @@ const AddItem = () => {
     <div className="flex justify-center items-center p-5 mt-6">
     <div>
       <h3 className="text-slate-700 text-2xl text-center my-5">Add new Item ... </h3>
-      <form onSubmit={addNewItems}>
+      <form onSubmit={addNewItems} className="w-full">
         <input
           className="border-2 border-slate-800 p-2 rounded-lg mr-3 mt-3"
           type="text"
