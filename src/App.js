@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import PrivateRoute from "./components/auth/PrivateRoute";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import AddItem from "./pages/AddItem";
 import Blog from "./pages/Blog";
@@ -33,9 +34,9 @@ function App() {
           <Route path="/signin" element={<SignIn />} />
         </Routes>
       </main>
-      {/* <footer>
-        <p>this is footer</p>
-      </footer> */}
+      <footer>
+        <Footer/>
+      </footer>
     </div>
   );
 }

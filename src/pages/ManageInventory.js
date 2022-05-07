@@ -68,7 +68,6 @@ const ManageInventory = () => {
 
      {
        products.length === 0 ? 
-      //  <p className="text-center text-5xl text-red-500">loading...</p>
       <Loading/>
         :  <table className="border-2 border-slate-500 p-5 h-96 md:w-1/2 w-full m-auto">
        <thead className="text-center">

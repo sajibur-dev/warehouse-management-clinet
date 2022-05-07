@@ -1,7 +1,6 @@
 import React from "react";
 import Spinner from "react-bootstrap/esm/Spinner";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import Banner from "../components/Banner";
 import Inventories from "../components/Inventories";
@@ -11,7 +10,6 @@ import auth from "../firebase";
 import SignIn from "./SignIn";
 
 const Home = () => {
-  const navigate = useNavigate();
   const [user, loading] = useAuthState(auth);
 
   if (loading) {

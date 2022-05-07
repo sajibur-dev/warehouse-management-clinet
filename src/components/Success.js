@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import useGetData from "../hooks/useGetData";
-import StarIcon from "./StarIcon";
+import ReviewIcon from "./ReviewIcon";
 
 const Success = () => {
   const url = "https://dry-mountain-82571.herokuapp.com/reviews";
   const [reviews] = useGetData(url);
   const [showReview, setShowReview] = useState(0);
-  console.log(reviews[showReview]);
   useEffect(() => {
     const inverval = setInterval(() => {
       if (showReview >= reviews?.length - 1) {
@@ -14,7 +13,7 @@ const Success = () => {
       } else {
         setShowReview(showReview + 1);
       }
-    }, 1000);
+    }, 2000);
     return () => {
       clearInterval(inverval);
     };
@@ -24,7 +23,7 @@ const Success = () => {
       <h1 className="md:text-3xl text-center my-5">
         What client's says about our services
       </h1>
-      <div className="bg-white  md:w-1/2 mx-auto p-3 rounded-lg text-center space-y-5 px-5 py-8">
+      <div className="bg-white  md:w-1/2 mx-auto p-3  h-96 rounded-lg text-center space-y-5 px-5 py-8">
         <div className="flex justify-center items-center">
           <img
             src={reviews[showReview]?.img}
@@ -37,35 +36,22 @@ const Success = () => {
           <span className="text-xs">( {reviews[showReview]?.desgnation} )</span>{" "}
         </h1>
         <h3>
-          {reviews[showReview]?.review === 3 && (
-            <>
-              <StarIcon textColor="text-orange-600" />
-              <StarIcon textColor="text-orange-600" />
-              <StarIcon textColor="text-orange-600" />
-              <StarIcon />
-              <StarIcon />
-            </>
-          )}
-          {reviews[showReview]?.review === 4 && (
-            <>
-              <StarIcon textColor="text-orange-600" />
-              <StarIcon textColor="text-orange-600" />
-              <StarIcon textColor="text-orange-600" />
-              <StarIcon textColor="text-orange-600" />
-              <StarIcon />
-            </>
-          )}
-          {reviews[showReview]?.review === 5 && (
-            <>
-              <StarIcon textColor="text-orange-600" />
-              <StarIcon textColor="text-orange-600" />
-              <StarIcon textColor="text-orange-600" />
-              <StarIcon textColor="text-orange-600" />
-              <StarIcon textColor="text-orange-600" />
-            </>
-          )}
+          {
+              <ReviewIcon review={reviews[showReview]?.review} qunatity={2}/>
+          }
+          {
+              <ReviewIcon review={reviews[showReview]?.review} qunatity={3}/>
+          }
+          {
+              <ReviewIcon review={reviews[showReview]?.review} qunatity={4}/>
+          }
+          {
+              <ReviewIcon review={reviews[showReview]?.review}  qunatity={5}/>
+          }
         </h3>
-        <p>{reviews[showReview]?.comments}</p>
+        <div className="h-36 overflow-y-scroll">
+          <p>{reviews[showReview]?.comments}</p>
+        </div>
       </div>
     </div>
   );
