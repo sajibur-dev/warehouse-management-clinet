@@ -1,10 +1,12 @@
-# Getting Started with Create React App
+# Electronics hub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project link [Electronics hub](https://warehouse-management-8e3e7.web.app/).
 
-## Available Scripts
+This product mange your iventories ...
 
-In the project directory, you can run:
+## Feature of this app :
+
+- you can save your product deatails in data base and then
 
 ### `npm start`
 

@@ -26,6 +26,8 @@ const Inventories = () => {
   }, [navigate, user?.email]);
 
   const showingProducts = products.slice(0, 6);
+  console.log(products);
+  console.log(showingProducts);
 
   return (
     <div className=" mt-5 space-y-3">
