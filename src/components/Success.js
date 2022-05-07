@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import useGetData from "../hooks/useGetData";
+import Button from "./Button";
 import ReviewIcon from "./ReviewIcon";
 
 const Success = () => {
   const url = "https://dry-mountain-82571.herokuapp.com/reviews";
   const [reviews] = useGetData(url);
   const [showReview, setShowReview] = useState(0);
+  const navigta =  useNavigate();
+  console.log(reviews);
   useEffect(() => {
     const inverval = setInterval(() => {
       if (showReview >= reviews?.length - 1) {
@@ -37,21 +41,25 @@ const Success = () => {
         </h1>
         <h3>
           {
-              <ReviewIcon review={reviews[showReview]?.review} qunatity={2}/>
+              <ReviewIcon review={+(reviews[showReview]?.review)} qunatity={2}/>
           }
           {
-              <ReviewIcon review={reviews[showReview]?.review} qunatity={3}/>
+              <ReviewIcon review={+(reviews[showReview]?.review)} qunatity={3}/>
           }
           {
-              <ReviewIcon review={reviews[showReview]?.review} qunatity={4}/>
+              <ReviewIcon review={+(reviews[showReview]?.review)} qunatity={4}/>
           }
           {
-              <ReviewIcon review={reviews[showReview]?.review}  qunatity={5}/>
+              <ReviewIcon review={+(reviews[showReview]?.review)}  qunatity={5}/>
           }
         </h3>
         <div className="h-36 overflow-y-scroll">
           <p>{reviews[showReview]?.comments}</p>
         </div>
+      </div>
+      <div className="flex justify-end  items-center mt-3">
+
+      <Button onClick={() => navigta('/addReview')}>Provide review</Button>
       </div>
     </div>
   );

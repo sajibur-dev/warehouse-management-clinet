@@ -9,7 +9,7 @@ import footerImage from '../assets/images/pay-method.png';
 const Footer = () => {
     
     return (
-        <div className='p-5 bg-blue-700 text-white mt-5'>
+        <div className='p-3 bg-blue-700 text-white mt-5 w-full'>
             <div className='md:flex md:justify-between items-center md:space-y-0 space-y-5'>
                 <div className='space-y-3'>
                     <h1>  Electronics Hub</h1>

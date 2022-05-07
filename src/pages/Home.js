@@ -30,7 +30,7 @@ const Home = () => {
       </div>
     );
   } else {
-    return <SignIn />;
+    return <> <SignIn /> <Success/> </>;
   }
 };
 

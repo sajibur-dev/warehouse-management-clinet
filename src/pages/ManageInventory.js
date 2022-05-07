@@ -64,7 +64,7 @@ const ManageInventory = () => {
   };
   return (
     <div>
-      <h1 className="text-4xl text-center my-10">Manage Your Inventories : </h1>
+      <h1 className="md:text-4xl text-xl text-center my-10">Manage Your Inventories : </h1>
 
      {
        products.length === 0 ? 

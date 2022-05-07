@@ -31,7 +31,7 @@ const SignIn = () => {
     signInWithEmailAndPassword(eamil, password);
   };
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center mb-5">
       <div className="border-2 p-5 rounded-lg mt-16">
         <form onSubmit={handleSignInForm}>
           <TextField

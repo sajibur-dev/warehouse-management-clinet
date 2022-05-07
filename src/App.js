@@ -1,9 +1,12 @@
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import PrivateRoute from "./components/auth/PrivateRoute";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import auth from "./firebase";
 import AddItem from "./pages/AddItem";
+import AddReview from "./pages/AddReview";
 import Blog from "./pages/Blog";
 import Home from "./pages/Home";
 import ManageInventory from "./pages/ManageInventory";
@@ -14,10 +17,14 @@ import SignIn from "./pages/SignIn";
 import UpdateInventory from "./pages/UpdateInventory";
 
 function App() {
+  const [user] = useAuthState(auth)
   return (
-    <div className="max-w-7xl m-auto">
+    <>
+      
       <header>
-        <Header />
+      {
+        user && <Header/> 
+      }
       </header>
       <main>
         <Routes>
@@ -28,6 +35,7 @@ function App() {
             <Route path="additem" element={<AddItem/>}/>
             <Route path="myitems" element={<MyItems/>}/>
             <Route path="blog" element={<Blog />} />
+            <Route path="addReview" element={<AddReview/>}/>
           </Route>
           <Route path="/*" element={<NotFound/>}/>
           <Route path="/regester" element={<Regester />} />
@@ -35,9 +43,11 @@ function App() {
         </Routes>
       </main>
       <footer>
-        <Footer/>
+        {
+          user && <Footer/>
+        }
       </footer>
-    </div>
+    </>
   );
 }
 
