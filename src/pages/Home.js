@@ -7,7 +7,6 @@ import Inventories from "../components/Inventories";
 import Services from "../components/Services";
 import Success from "../components/Success";
 import auth from "../firebase";
-import SignIn from "./SignIn";
 
 const Home = () => {
   const [user, loading] = useAuthState(auth);
@@ -20,18 +19,14 @@ const Home = () => {
     );
   }
 
-  if (user) {
-    return (
-      <div>
-        <Banner />
-        <Inventories />
-        <Services />
-        <Success/>
-      </div>
-    );
-  } else {
-    return <> <SignIn /> <Success/> </>;
-  }
+  return (
+    <div>
+      <Banner />
+      {user && <Inventories />}
+      <Services />
+      <Success />
+    </div>
+  );
 };
 
 export default Home;

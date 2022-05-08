@@ -29,7 +29,7 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <ToastContainer/>
+            <ToastContainer />
             <NavLink
               style={({ isActive }) =>
                 isActive ? { color: "goldenrod" } : undefined
@@ -39,24 +39,28 @@ const Header = () => {
             >
               Home
             </NavLink>
-            <NavLink
-              style={({ isActive }) =>
-                isActive ? { color: "goldenrod" } : undefined
-              }
-              className="mr-5 uppercase"
-              to="/manageinventory"
-            >
-              Manage Inventory
-            </NavLink>
-            <NavLink
-              style={({ isActive }) =>
-                isActive ? { color: "goldenrod" } : undefined
-              }
-              className="mr-5 uppercase"
-              to="/myitems"
-            >
-              My Items
-            </NavLink>
+            {user && (
+              <>
+                <NavLink
+                  style={({ isActive }) =>
+                    isActive ? { color: "goldenrod" } : undefined
+                  }
+                  className="mr-5 uppercase"
+                  to="/manageinventory"
+                >
+                  Manage Inventory
+                </NavLink>
+                <NavLink
+                  style={({ isActive }) =>
+                    isActive ? { color: "goldenrod" } : undefined
+                  }
+                  className="mr-5 uppercase"
+                  to="/myitems"
+                >
+                  My Items
+                </NavLink>
+              </>
+            )}
             <NavLink
               style={({ isActive }) =>
                 isActive ? { color: "goldenrod" } : undefined

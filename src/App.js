@@ -22,9 +22,7 @@ function App() {
     <>
       
       <header>
-      {
-        user && <Header/> 
-      }
+        <Header/> 
       </header>
       <main>
         <Routes>
@@ -34,18 +32,16 @@ function App() {
             <Route path="manageinventory" element={<ManageInventory/>}/>
             <Route path="additem" element={<AddItem/>}/>
             <Route path="myitems" element={<MyItems/>}/>
-            <Route path="blog" element={<Blog />} />
             <Route path="addReview" element={<AddReview/>}/>
           </Route>
+          <Route path="blog" element={<Blog />} />
           <Route path="/*" element={<NotFound/>}/>
           <Route path="/regester" element={<Regester />} />
           <Route path="/signin" element={<SignIn />} />
         </Routes>
       </main>
       <footer>
-        {
-          user && <Footer/>
-        }
+        <Footer/>
       </footer>
     </>
   );
