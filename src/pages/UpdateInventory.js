@@ -53,7 +53,7 @@ const UpdateInventory = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          toast("data updated successfully!! see home page");
+          toast("data updated successfully!! see myItems page");
         }
       });
   };
