@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 export default function useToken(user){
     const [token,setToken] = useState('');
-    console.log(token);
     useEffect(()=>{
             const getToken = async () => {
                 const email = user?.user?.email;

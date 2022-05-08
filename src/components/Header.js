@@ -69,7 +69,6 @@ const Header = () => {
               <LinkButton to="/signin">Login</LinkButton>
             ) : (
               <Button onClick={() => {
-                console.log('button');
                 signOut(auth)
               }}>sign out</Button>
             )}

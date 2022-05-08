@@ -12,24 +12,19 @@ const AddReview = () => {
     const [comments,setComments] = useState('');
     const [img,setImg] = useState('');
     const [existingReview,setExistingReview] = useState({});
-console.log(existingReview);
     const [user] = useAuthState(auth);
-    console.log(user);
     useEffect(()=>{
         fetch(`https://dry-mountain-82571.herokuapp.com/review?email=${user?.email}`)
-        // fetch(`http://localhost:5000/review?email=${user?.email}`)
         .then((res) => res.json())
         .then((data) => {
-                // console.log(data);
                 setExistingReview(data)
         }).catch((err) => {
-            console.log(err);
+            toast(err.message);
         })
         
     },[user?.email])
     const handleAddReview = (e) => {
         e.preventDefault();
-        console.log('button was clicked');
         const userReview = {
             name,
             desgnation,

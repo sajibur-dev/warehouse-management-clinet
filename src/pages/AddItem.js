@@ -12,9 +12,8 @@ const AddItem = () => {
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
   
-  const [user, loading, error] =   useAuthState(auth)
+  const [user] =   useAuthState(auth)
 
-  console.log(user);
   const addNewItems = (e) => {
     e.preventDefault();
     const product = {

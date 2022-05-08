@@ -32,7 +32,6 @@ const ManageInventory = () => {
         `https://dry-mountain-82571.herokuapp.com/myitems?email=${user?.email}`
       )
       .then((res) => {
-        console.log(res.data);
         const count = res.data.length;
         const pages = Math.ceil(count / 10);
         setPageCount(pages);
@@ -53,10 +52,8 @@ const ManageInventory = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           if (data.acknowledged) {
             const remaining = products.filter((product) => product._id !== id);
-            console.log(remaining);
             setProducts(remaining);
           }
         });
@@ -64,43 +61,45 @@ const ManageInventory = () => {
   };
   return (
     <div>
-      <h1 className="md:text-4xl text-xl text-center my-10">Manage Your Inventories : </h1>
+      <h1 className="md:text-4xl text-xl text-center my-10">
+        Manage Your Inventories :{" "}
+      </h1>
 
-     {
-       products.length === 0 ? 
-      <Loading/>
-        :  <table className="border-2 border-slate-500 p-5 h-96 md:w-1/2 w-full m-auto">
-       <thead className="text-center">
-         <th>Image</th>
-         <th>Name</th>
-         <th>Category</th>
-         <th>Action</th>
-       </thead>
-       <tbody>
-         {products.map((product) => (
-           <tr key={product._id}>
-             <td className="border-2 border-slate-700 md:py-2  md:px-5 py-1 px-1  w-1/4">
-               <img src={product.image} className="md:w-10 w-2/3" alt="" />
-             </td>
-             <td className="border-2 border-slate-700 md:py-2 md:px-5 py-1 px-1 md:text-base text-sm">
-               {product.name}
-             </td>
-             <td className="border-2 border-slate-700 md:py-2 md:px-5 py-1 px-1 md:base text-sm">
-               {product.category}
-             </td>
-             <td className="border-2 border-slate-700 md:py-2 md:px-5 py-1 px-1">
-               <button
-                 className="py-2 px-3 rounded-lg hover:bg-gray-200 hover:text-red-700 duration-300 "
-                 onClick={() => deleteProduct(product._id)}
-               >
-                 <FontAwesomeIcon icon={faTrashCan} />
-               </button>
-             </td>
-           </tr>
-         ))}
-       </tbody>
-     </table>
-     }
+      {products.length === 0 ? (
+        <Loading />
+      ) : (
+        <table className="border-2 border-slate-500 p-5 h-96 md:w-1/2 w-full m-auto">
+          <thead className="text-center">
+            <th>Image</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Action</th>
+          </thead>
+          <tbody>
+            {products.map((product) => (
+              <tr key={product._id}>
+                <td className="border-2 border-slate-700 md:py-2  md:px-5 py-1 px-1  w-1/4">
+                  <img src={product.image} className="md:w-10 w-2/3" alt="" />
+                </td>
+                <td className="border-2 border-slate-700 md:py-2 md:px-5 py-1 px-1 md:text-base text-sm">
+                  {product.name}
+                </td>
+                <td className="border-2 border-slate-700 md:py-2 md:px-5 py-1 px-1 md:base text-sm">
+                  {product.category}
+                </td>
+                <td className="border-2 border-slate-700 md:py-2 md:px-5 py-1 px-1">
+                  <button
+                    className="py-2 px-3 rounded-lg hover:bg-gray-200 hover:text-red-700 duration-300 "
+                    onClick={() => deleteProduct(product._id)}
+                  >
+                    <FontAwesomeIcon icon={faTrashCan} />
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
 
       <div className="flex justify-center items-center mt-5">
         {[...Array(pageCount).keys()].map((number) => (
@@ -119,7 +118,7 @@ const ManageInventory = () => {
           to="/additem"
           className="py-2 px-5 bg-slate-800 rounded-lg text-white"
         >
-          <FontAwesomeIcon icon={faPlus}/>
+          <FontAwesomeIcon icon={faPlus} />
         </LinkButton>
       </div>
     </div>

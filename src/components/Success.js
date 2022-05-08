@@ -9,7 +9,6 @@ const Success = () => {
   const [reviews] = useGetData(url);
   const [showReview, setShowReview] = useState(0);
   const navigta =  useNavigate();
-  console.log(reviews);
   useEffect(() => {
     const inverval = setInterval(() => {
       if (showReview >= reviews?.length - 1) {

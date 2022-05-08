@@ -8,12 +8,11 @@ import Loading from "../components/Loading";
 import auth from "../firebase";
 
 const MyItems = () => {
-  const [products,setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
   const [user] = useAuthState(auth);
   const [pageCount, setPageCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
   const [size, setSize] = useState(5);
-  console.log(pageCount);
   const url = `https://dry-mountain-82571.herokuapp.com/myitems?email=${user?.email}&&page=${currentPage}&&size=${size}`;
   useEffect(() => {
     axiosPrivate
@@ -31,7 +30,6 @@ const MyItems = () => {
         `https://dry-mountain-82571.herokuapp.com/myitems?email=${user?.email}`
       )
       .then((res) => {
-        console.log(res.data);
         const count = res.data.length;
         const pages = Math.ceil(count / 5);
         setPageCount(pages);
@@ -53,9 +51,9 @@ const MyItems = () => {
           ))}
         </div>
       ) : (
-        <Loading/>
+        <Loading />
       )}
-       <div className="flex justify-center items-center mt-5">
+      <div className="flex justify-center items-center mt-5">
         {[...Array(pageCount).keys()].map((number) => (
           <button
             className={`border-2 py-2 px-3 border-slate-800 mr-3 ${

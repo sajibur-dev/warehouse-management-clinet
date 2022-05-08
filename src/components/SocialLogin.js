@@ -17,7 +17,6 @@ const SocialLogin = ({ type, provider, ...rest }) => {
 
   
   const navigate = useNavigate();
-  console.log(user);
 
   if(token){
     navigate('/')

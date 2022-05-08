@@ -5,7 +5,6 @@ import Service from "./Service";
 const Services = () => {
   const url = "https://dry-mountain-82571.herokuapp.com/services";
   const [services] = useGetData(url);
-  console.log(services);
   return (
     <div className="mt-5">
       <h1 className="text-3xl text-center ">Services </h1>
