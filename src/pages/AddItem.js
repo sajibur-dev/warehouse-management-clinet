@@ -42,12 +42,12 @@ const AddItem = () => {
     
 }
   return (
-    <div className="flex justify-center items-center p-5 mt-6">
-    <div>
+    <div className="md:flex md:justify-center md:items-center p-5 mt-6">
+    <div className="w-full">
       <h3 className="text-slate-700 text-2xl text-center my-5">Add new Item ... </h3>
-      <form onSubmit={addNewItems} className="w-full">
+      <form onSubmit={addNewItems} className="w-fit p-2">
         <input
-          className="border-2 border-slate-800 p-2 rounded-lg mr-3 mt-3"
+          className="border-2 border-slate-800 p-2 rounded-lg md:mr-3 mt-3"
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -55,7 +55,7 @@ const AddItem = () => {
           placeholder="product name"
         />
         <input
-          className="border-2 border-slate-800 p-2 rounded-lg mr-3 mt-3"
+          className="border-2 border-slate-800 p-2 rounded-lg md:mr-3 mt-3"
           type="text"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
@@ -63,7 +63,7 @@ const AddItem = () => {
           placeholder="price"
         />
         <input
-          className="border-2 border-slate-800 p-2 rounded-lg mr-3 mt-3"
+          className="border-2 border-slate-800 p-2 rounded-lg md:mr-3 mt-3"
           type="number"
           value={quantity}
           onChange={(e) => setQuantity(e.target.value)}
@@ -71,10 +71,8 @@ const AddItem = () => {
           placeholder="quantity"
         />
 
-        <br />
-
         <input
-          className="border-2 border-slate-800 p-2 rounded-lg mr-3 mt-3"
+          className="border-2 border-slate-800 p-2 rounded-lg md:mr-3 mt-3"
           type="text"
           value={supplier}
           onChange={(e) => setSupplier(e.target.value)}
@@ -82,7 +80,7 @@ const AddItem = () => {
           placeholder="supplier"
         />
         <input
-          className="border-2 border-slate-800 p-2 rounded-lg mr-3 mt-3"
+          className="border-2 border-slate-800 p-2 rounded-lg md:mr-3 mt-3"
           type="text"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
@@ -90,26 +88,24 @@ const AddItem = () => {
           placeholder="category"
         />
         <input
-          className="border-2 border-slate-800 p-2 rounded-lg mr-3 mt-3"
+          className="border-2 border-slate-800 p-2 rounded-lg md:mr-3 mt-3"
           type="text"
           value={image}
           onChange={(e) => setImage(e.target.value)}
           required
           placeholder="image url"
         />
-        <br />
-        <input className="border-2 border-slate-800 p-2 rounded-lg mr-3 mt-3" type="text"  value={user.email} readOnly />
+        <input className="border-2 border-slate-800 p-2 rounded-lg md:mr-3 mt-3" type="text"  value={user.email} readOnly />
         <br />
         <textarea
-          className="border-2 border-slate-800 p-2 rounded-lg mr-3 mt-3 "
+          className="border-2 border-slate-800 p-2 rounded-lg md:mr-3 mt-3 "
           onChange={(e) => setDescription(e.target.value)}
           required
           placeholder="descritpion"
           value={description}
-          cols="30"
+          cols="25"
           rows="5"
         ></textarea>
-        <br />
         <input
           type="submit"
           value="submit"

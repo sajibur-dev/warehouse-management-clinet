@@ -62,7 +62,7 @@ console.log(existingReview);
             <form onSubmit={handleAddReview}>
                 <TextField onBlur={(e) => setName(e.target.value)} placeholder="name"/>
                 <TextField onBlur={(e) => setDesnation(e.target.value)} placeholder="desgnation"/>
-                <TextField onBlur={(e) => setReview(e.target.value)} type="number" placeholder="review"/>
+                <TextField onBlur={(e) => setReview(e.target.value)} type="number" placeholder="rating"/>
                 <textarea onBlur={(e) => setComments(e.target.value)} placeholder="comments" className='border-2 border-gray-400 outline-none px-2 py-1 rounded-lg'/>
                 <TextField onBlur={(e) => setImg(e.target.value)} placeholder="img url"/>
                 <FormButton value="add review"/>

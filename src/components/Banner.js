@@ -3,8 +3,7 @@ import banner1 from '../assets/images/banner1.png';
 import banner2 from '../assets/images/banner2.png';
 import banner3 from '../assets/images/banner3.png';
 
-const Banner = () => {
-  // const imgSrc = ['https://i.ibb.co/k0pqm2Z/banner1.jpg','https://i.ibb.co/k0pqm2Z/banner1.jpg','https://i.ibb.co/k0pqm2Z/banner1.jpg'] 
+const Banner = () => { 
   const imgSrcContainer = [banner1,banner2,banner3]
   const [imgSrc,setImgSrc] = useState(0);
   useEffect(() => {
