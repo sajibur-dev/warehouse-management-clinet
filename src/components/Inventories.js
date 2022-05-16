@@ -17,12 +17,12 @@ const Inventories = () => {
         `https://dry-mountain-82571.herokuapp.com/myitems?email=${user?.email}`
       )
       .then((res) => {
-        console.log(res);
-
-        setProducts(res.data)
+        // setProducts()
         if(res.status === 401 || res.status === 403){
           signOut(auth);
           navigate("/signin");
+        } else {
+          setProducts(res.data)
         }
       })
       .then((err) => {
