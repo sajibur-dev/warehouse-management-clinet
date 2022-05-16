@@ -25,7 +25,7 @@ const Inventories = () => {
         }
       })
       .then((err) => {
-        console.log(err);
+        // console.log(err);
       });
   }, [navigate, user?.email]);
 
