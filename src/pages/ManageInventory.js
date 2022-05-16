@@ -21,7 +21,7 @@ const ManageInventory = () => {
       .get(url)
       .then((res) => setProducts(res.data))
       .then((err) => {
-        if (err.response.status === 401 || err.response.status === 403) {
+        if (err.respinse.status === 401 || err.response.status === 403) {
           signOut(auth);
           Navigate("/signin");
         }
