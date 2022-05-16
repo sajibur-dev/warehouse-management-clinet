@@ -14,7 +14,7 @@ const Inventories = () => {
   useEffect(() => {
     axiosPrivate
       .get(
-        `https://dry-mountain-82571.herokuapp.com/myitems?email=${user?.email}`
+        'https://dry-mountain-82571.herokuapp.com/products'
       )
       .then((res) => {
         if(res.status === 401 || res.status === 403){
