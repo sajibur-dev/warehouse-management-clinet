@@ -58,7 +58,7 @@ const Success = () => {
       </div>
       <div className="flex justify-end  items-center mt-3">
 
-      <Button onClick={() => navigta('/addReview')}>Provide review</Button>
+      <Button onClick={() => navigta('/addReview')}>Provide reviews</Button>
       </div>
     </div>
   );
